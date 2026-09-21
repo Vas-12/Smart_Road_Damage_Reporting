@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Smart Road Damage Reporting System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">Smart Road Reporter</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="report.html">Report Issue</a></li>
+        <li><a href="reports.html">Public Reports</a></li>
+        <li><a href="admin.html">Admin Portal</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header" style="text-align: center; max-width: 800px; margin: 0 auto 2.5rem auto;">
+      <h2 class="page-title">About the Project</h2>
+      <p class="page-subtitle">A decentralized civic tech solution designed to bridge communication gaps between daily motorists, pedestrians, and public road administration.</p>
+    </div>
+
+    <div style="max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem;">
+      <div class="card">
+        <h3 style="margin-bottom: 0.75rem; color: var(--primary);">System Objectives</h3>
+        <p style="color: #475569; margin-bottom: 0.75rem;">
+          Potholes, broken street lighting, and hazardous pavement cracks remain major contributors to roadway accidents. Conventional phone call desks often suffer from poor documentation, absent photographic evidence, and zero tracking mechanisms for citizens.
+        </p>
+        <p style="color: #475569;">
+          This platform introduces an accountable, transparent lifecycle where any citizen can submit an image, document coordinates, and monitor municipal mitigation progress in real time.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-bottom: 0.75rem; color: var(--primary);">Technical Architecture</h3>
+        <ul style="list-style-position: inside; color: #475569; display: flex; flex-direction: column; gap: 0.5rem;">
+          <li><strong>Client-Side Processing:</strong> Written strictly in standardized HTML5, CSS3, and modern Vanilla JavaScript without external dependencies.</li>
+          <li><strong>Image Encoding:</strong> Converts user-submitted binary photos into Base64 strings using the native HTML5 <code>FileReader</code> API.</li>
+          <li><strong>Offline-First Persistence:</strong> Utilizes browser <code>localStorage</code> to store serialized complaint JSON arrays and sequential ticket counters.</li>
+          <li><strong>Lifecycle Tracking:</strong> Employs dynamic state management to advance tickets from <em>Reported</em> to <em>Resolved</em>.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-bottom: 0.75rem; color: var(--primary);">Frequently Asked Questions</h3>
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+          <div>
+            <h4 style="font-size: 1rem;">How is an image stored without an external cloud bucket?</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">The browser's FileReader converts the file into a base64 Data URL string which is stored directly alongside form metadata in LocalStorage.</p>
+          </div>
+          <div>
+            <h4 style="font-size: 1rem;">What happens if the browser cache is purged?</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Because this client-only project utilizes browser-scoped local storage, clearing cache resets the data. The Admin Portal includes a "Load Demo Data" button to restore sample records instantly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Smart Road Damage Reporting System | Academic Project Documentation</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

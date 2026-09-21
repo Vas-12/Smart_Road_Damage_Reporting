@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authority Portal - Smart Road Damage Reporting</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">Smart Road Reporter</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="report.html">Report Issue</a></li>
+        <li><a href="reports.html">Public Reports</a></li>
+        <li><a href="admin.html" class="active">Admin Portal</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <h2 class="page-title">Road Maintenance Triage</h2>
+        <p class="page-subtitle">Inspect citizen dispatches, update work orders, and remove invalid reports.</p>
+      </div>
+      <div>
+        <button id="demo-data-btn" class="btn btn-secondary btn-sm">&#8635; Load Demo Data</button>
+      </div>
+    </div>
+
+    <!-- Admin Metric Dash -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num" id="total-count">0</div>
+        <div class="stat-label">Total Submissions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="reported-count" style="color: var(--status-reported);">0</div>
+        <div class="stat-label">Reported</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="review-count" style="color: var(--status-review);">0</div>
+        <div class="stat-label">Under Review</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="progress-count" style="color: var(--status-progress);">0</div>
+        <div class="stat-label">In Progress</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="resolved-count" style="color: var(--status-resolved);">0</div>
+        <div class="stat-label">Resolved</div>
+      </div>
+    </div>
+
+    <!-- Filter & Table Card -->
+    <div class="card">
+      <div class="filter-bar" style="padding: 0 0 1rem 0; border: none;">
+        <input type="text" id="admin-search" class="form-control" placeholder="Search by ID, Location, or Reporter...">
+        <select id="admin-filter-status" class="form-control">
+          <option value="">All Statuses</option>
+          <option value="Reported">Reported</option>
+          <option value="Under Review">Under Review</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Resolved">Resolved</option>
+        </select>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Issue Type</th>
+              <th>Location</th>
+              <th>Submitted Date</th>
+              <th>Reporter</th>
+              <th>Status</th>
+              <th>Update Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="admin-table-body">
+            <!-- Dynamic Records -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Smart Road Damage Reporting System | Municipal Operations Console</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

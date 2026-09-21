@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Road Damage Reporting System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19L20 19M4 5L20 5M12 5L12 19"/></svg>
+        Smart Road Reporter
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="report.html">Report Issue</a></li>
+        <li><a href="reports.html">Public Reports</a></li>
+        <li><a href="admin.html">Admin Portal</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Report Road Damage in Seconds</h1>
+      <p>Empowering citizens to report potholes, broken streetlights, fissures, and drainage hazards directly to local maintenance authorities.</p>
+      <div class="hero-actions">
+        <a href="report.html" class="btn btn-accent">File a Road Complaint</a>
+        <a href="reports.html" class="btn btn-secondary">Track Reports</a>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num" id="stat-total">0</div>
+        <div class="stat-label">Total Reports Filed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-reported">0</div>
+        <div class="stat-label">Pending Verification</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-progress">0</div>
+        <div class="stat-label">Under Active Repair</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-resolved">0</div>
+        <div class="stat-label">Hazards Resolved</div>
+      </div>
+    </section>
+
+    <div class="page-header" style="text-align: center; margin-bottom: 2.5rem;">
+      <h2 class="page-title">How It Works</h2>
+      <p class="page-subtitle">Simple, accountable 4-stage civic resolution flow</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+      <div class="card" style="text-align: center;">
+        <div style="font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem;">1</div>
+        <h3 style="margin-bottom: 0.5rem;">Spot & Capture</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Take a photo of the road damage and record the street location.</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <div style="font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem;">2</div>
+        <h3 style="margin-bottom: 0.5rem;">Submit Ticket</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Upload evidence to generate an auto-incremented complaint tracking ID.</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <div style="font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem;">3</div>
+        <h3 style="margin-bottom: 0.5rem;">Inspection</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Municipal road authorities review damage severity and dispatch crews.</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <div style="font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem;">4</div>
+        <h3 style="margin-bottom: 0.5rem;">Resolution</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Road repairs are completed and status transitions dynamically to Resolved.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Smart Road Damage Reporting System | Final-Year Project Demonstration</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const reports = getReports();
+      document.getElementById("stat-total").textContent = reports.length;
+      document.getElementById("stat-reported").textContent = reports.filter(r => r.status === "Reported").length;
+      document.getElementById("stat-progress").textContent = reports.filter(r => r.status === "In Progress").length;
+      document.getElementById("stat-resolved").textContent = reports.filter(r => r.status === "Resolved").length;
+    });
+  </script>
+</body>
+</html>

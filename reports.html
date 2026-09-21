@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public Road Grievance Catalog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">Smart Road Reporter</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="report.html">Report Issue</a></li>
+        <li><a href="reports.html" class="active">Public Reports</a></li>
+        <li><a href="admin.html">Admin Portal</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h2 class="page-title">Submitted Road Damage Incidents</h2>
+      <p class="page-subtitle">Track complaints, review municipal progress, or verify local work orders.</p>
+    </div>
+
+    <!-- Filter & Search Controls -->
+    <div class="filter-bar">
+      <input type="text" id="search-input" class="form-control" placeholder="Search by ID, Location, or Landmark...">
+      
+      <select id="filter-type" class="form-control">
+        <option value="">All Categories</option>
+        <option value="Pothole">Pothole</option>
+        <option value="Road Crack">Road Crack</option>
+        <option value="Damaged Streetlight">Damaged Streetlight</option>
+        <option value="Damaged Road Sign">Damaged Road Sign</option>
+        <option value="Drainage Problem">Drainage Problem</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <select id="filter-status" class="form-control">
+        <option value="">All Statuses</option>
+        <option value="Reported">Reported</option>
+        <option value="Under Review">Under Review</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Resolved">Resolved</option>
+      </select>
+    </div>
+
+    <div id="reports-grid" class="reports-grid">
+      <!-- Dynamically Injected -->
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Smart Road Damage Reporting System | Public Transparency Portal</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/reports.js"></script>
+</body>
+</html>

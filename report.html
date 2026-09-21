@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Incident - Smart Road Damage Reporting System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">Smart Road Reporter</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="report.html" class="active">Report Issue</a></li>
+        <li><a href="reports.html">Public Reports</a></li>
+        <li><a href="admin.html">Admin Portal</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="form-card">
+      <div class="page-header">
+        <h2 class="page-title">File Road Damage Complaint</h2>
+        <p class="page-subtitle">Provide details and upload photographic evidence for review.</p>
+      </div>
+
+      <div id="alert-container"></div>
+
+      <form id="damage-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="reporter-name">Reporter Name *</label>
+            <input type="text" id="reporter-name" class="form-control" placeholder="e.g. Aravind Kumar" required>
+          </div>
+          <div class="form-group">
+            <label for="reporter-phone">Phone Number *</label>
+            <input type="tel" id="reporter-phone" class="form-control" placeholder="10-digit mobile number" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="reporter-email">Email Address *</label>
+          <input type="email" id="reporter-email" class="form-control" placeholder="name@example.com" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="issue-type">Issue Type *</label>
+            <select id="issue-type" class="form-control" required>
+              <option value="">-- Choose Category --</option>
+              <option value="Pothole">Pothole</option>
+              <option value="Road Crack">Road Crack</option>
+              <option value="Damaged Streetlight">Damaged Streetlight</option>
+              <option value="Damaged Road Sign">Damaged Road Sign</option>
+              <option value="Drainage Problem">Drainage Problem</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="incident-date">Date Observed *</label>
+            <input type="date" id="incident-date" class="form-control" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="incident-location">Exact Location / Landmark *</label>
+          <input type="text" id="incident-location" class="form-control" placeholder="e.g. 100 Feet Road, Near Bus Stand" required>
+        </div>
+
+        <div class="form-group">
+          <label for="incident-desc">Problem Description *</label>
+          <textarea id="incident-desc" class="form-control" placeholder="Describe depth, traffic disruption, or safety risks..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="image-upload">Attach Photograph (JPG, PNG - Max 2MB) *</label>
+          <input type="file" id="image-upload" class="form-control" accept="image/png, image/jpeg, image/jpg" required>
+          
+          <div class="image-preview-container" id="preview-box">
+            <span class="preview-placeholder" id="placeholder-text">Selected image will preview here</span>
+            <img id="preview-img" alt="Uploaded Preview">
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" style="flex: 2;">Submit Complaint</button>
+          <button type="reset" class="btn btn-secondary" id="reset-btn" style="flex: 1;">Clear</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Smart Road Damage Reporting System | Civic Grievance Framework</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/report.js"></script>
+</body>
+</html>
